@@ -9,20 +9,25 @@ struct list
 	node *head;
 	node *tail;
 };
-void initList(list& l){
+void initList(list& l)
+{
 	l.head=NULL;
 	l.tail=NULL;
 }
-node* CreateNode(int value){
+node* CreateNode(int value)
+{
 	node *a= new node();
-	if(a!=NULL){
+	if(a!=NULL)
+	{
 		a->Data=value;
 		a->next=NULL;
 	}
 	return a;
 }
-void insertFist(list &l,node* x){
-	if(l.head ==NULL){
+void insertFist(list &l,node* x)
+{
+	if(l.head ==NULL)
+	{
 		l.head=x;
 		return;
 	}
@@ -30,8 +35,10 @@ void insertFist(list &l,node* x){
 	l.head=x;
 	return;
 }
-void DeleteHead(list &l){
-	if(l.head==l.tail){
+void DeleteHead(list &l)
+{
+	if(l.head==l.tail)
+	{
 		l.head=l.tail=NULL;
 		return;
 	}
@@ -40,7 +47,8 @@ void DeleteHead(list &l){
 	l.head=i;
 	return;
 }
-void DelAfter(list &l,int value){
+void DelAfter(list &l,int value)
+{
 	node *i=l.head;
 	while (i->Data != value )
 	{
@@ -50,7 +58,8 @@ void DelAfter(list &l,int value){
 	i->next=i->next->next;
 	free(a);
 }
-void addAfter(list &l,int value,node*x){
+void addAfter(list &l,int value,node*x)
+{
 	node *i=l.head;
 	while (i->Data != value )
 	{
@@ -59,14 +68,16 @@ void addAfter(list &l,int value,node*x){
 	x->next=i->next;
 	i->next=x;
 }
-void case1(list &l){
+void case1(list &l)
+{
 	int temp;
 	printf("\nNhap: ");
 	scanf("%d",&temp);
 	node *a = CreateNode(temp);
 	insertFist(l,a);
 }
-void case2(list l){
+void case2(list l)
+{
 	node *i =l.head;
 		while (i!=NULL)
 		{
@@ -74,13 +85,15 @@ void case2(list l){
 			i=i->next;
 		}
 }
-void case4(list &l){
+void case4(list &l)
+{
 	int value;
 	printf("\nNhap value: ");
 	scanf("%d",&value);
 	DelAfter(l,value);
 }
-void case5(list &l){
+void case5(list &l)
+{
 	int value,pos;
 	printf("Insert  : ");
 	scanf("%d",&value);
@@ -89,7 +102,8 @@ void case5(list &l){
 	node *x = CreateNode(value);
 	addAfter(l,pos,x);
 }
-bool Find(list l,int pos){
+bool Find(list l,int pos)
+{
 	node*i=l.head;
 	while (i!=NULL)
 	{
@@ -122,16 +136,14 @@ int main(){
 	initList(l);
 	do{
 		system("cls");
-	printf("\n0.Thoat");
-	printf("\n1.Them phan tu");
-	printf("\n2.xuat danh sach");
-	printf("\n3.Xoa phan tu dau danh sach");
-	printf("\n4.Xoa phan tu phia sau p");
-	printf("\n5.Them phan tu sau p");
-	printf("\n6.Tim kiem");
-	printf("\n7.Sap xep tang dan");
-	
-	
+		printf("\n0.Thoat");
+		printf("\n1.Them phan tu");
+		printf("\n2.xuat danh sach");
+		printf("\n3.Xoa phan tu dau danh sach");
+		printf("\n4.Xoa phan tu phia sau p");
+		printf("\n5.Them phan tu sau p");
+		printf("\n6.Tim kiem");
+		printf("\n7.Sap xep tang dan");
 		printf("\nChon: ");
 		scanf("%d",&chon);
 	
