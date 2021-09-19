@@ -49,6 +49,16 @@ void DeleteHead(list &l)
 }
 void DelAfter(list &l,int value)
 {
+	if(l.head ==l.tail && l.head !=NULL)
+	{
+		printf("\nDanh sach co 1 phan tu");
+		return;
+	}
+	if(l.head == NULL)
+	{
+		printf("\nLinked is empty !");
+		return;
+	}
 	node *i=l.head;
 	while (i->Data != value )
 	{
